@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { H2, H3 } from './headings'
-import { cn } from '@/lib/utils'
+import { cn } from '../../../lib/utils'
 
 export const TextBlock = ({
   headingText,
