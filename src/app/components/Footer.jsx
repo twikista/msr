@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { FaCreativeCommonsBy, FaCreativeCommons } from 'react-icons/fa'
 import { useSelectedLayoutSegment } from 'next/navigation'
-import { menuItems } from '@/static/menuItems'
+import { menuItems } from '../../static/menuItems'
 
 function Footer() {
   const routeSegment = useSelectedLayoutSegment()

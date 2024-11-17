@@ -1,12 +1,11 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import unibenLogo from '@/../public/uniben_logo.png'
+import React, { useState } from 'react'
+import unibenLogo from '../../../../public/uniben_logo.png'
 import Image from 'next/image'
 import { MdMenu } from 'react-icons/md'
 import { MobileNav } from './MobileNav'
-import { menuItems } from '@/static/menuItems'
-import { robotoCondensed } from '@/app/font/font'
+import { menuItems } from '../../../static/menuItems'
 import { DesktopNav } from './DesktopNav'
 import { useSelectedLayoutSegment } from 'next/navigation'
 

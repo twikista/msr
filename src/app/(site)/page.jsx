@@ -1,13 +1,10 @@
-import Image from 'next/image'
-import unibenLogo from '@/../public/uniben_logo.png'
-import { MdMenu, MdOutlineClose } from 'react-icons/md'
-import Header from '../components/Header'
 import Main from '../components/shared/Main'
 import Link from 'next/link'
+import { H2, H3 } from '../components/shared/headings'
 
 const TextBlock = ({ heading, text, href = '#' }) => (
-  <div className='flex flex-col gap-1 p-2 rounded-lg '>
-    <h4 className='font-semibold'>{heading}</h4>
+  <div className={'flex flex-col gap-1 p-2 rounded-lg'}>
+    <H3>{heading}</H3>
     <p>{text}</p>
     <Link href={href} className='underline hover:text-blue-600 w-fit'>
       Learn more
@@ -37,10 +34,10 @@ export default function Home() {
       <div>
         <div className='flex flex-col rounded-[4px] bg-gray-200 p-2  gap-5'>
           <div className='py-2 border-b border-gray-400/60'>
-            <h2 className='text-lg font-medium'>Quick facts about the MSR</h2>
+            <H2>Quick facts about the MSR</H2>
           </div>
 
-          <div className='grid grid-cols-2 gap-x-4 gap-y-5 '>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 md:gap-y-5 '>
             <TextBlock
               heading='Submission'
               text='The MRS accepts submissions from authors on an on-going basis. Only submissions that adhere to the MSR Authors guide will be considered for review.'

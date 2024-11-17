@@ -3,15 +3,13 @@ import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { TiArrowSortedDown } from 'react-icons/ti'
-import { menuItems } from '@/static/menuItems'
 
 function SubMenu({ subMenuItems, showSubMenu, setShowSubMenu }) {
-  // console.log(subMenuItems)
   const closeSubMenu = () => {
     showSubMenu && setShowSubMenu(false)
   }
   return (
-    <ul className='absolute flex flex-col text-[15px] text-white bg-secondary top-[28px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-2px_rgba(0,0,0,0.05)]'>
+    <ul className='absolute flex flex-col text-[15px] text-white bg-secondary top-[25px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-2px_rgba(0,0,0,0.05)]'>
       {subMenuItems.map((menuItem) => (
         <li
           key={menuItem.pathName}
@@ -33,10 +31,8 @@ function SubMenu({ subMenuItems, showSubMenu, setShowSubMenu }) {
 }
 
 function MenuItem({ menuItem }) {
-  // console.log(menuItem)
   const [showSubMenu, setShowSubMenu] = useState(false)
   const currentRoute = usePathname()
-  // console.log(currentRoute)
   const handler = () => {
     setShowSubMenu(!showSubMenu)
   }
@@ -78,7 +74,6 @@ function MenuItem({ menuItem }) {
 }
 
 export function DesktopNav({ menuItems }) {
-  console.log(menuItems)
   const [hang, setHang] = useState(false)
   //   const [showSubMenu, setShowSubMenu] = useState(false)
 

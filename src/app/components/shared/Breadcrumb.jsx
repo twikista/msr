@@ -1,13 +1,14 @@
 'use client'
 
 import React from 'react'
-import { usePathname } from 'next/navigation'
+import { usePathname, useSelectedLayoutSegment } from 'next/navigation'
 import Link from 'next/link'
 import { FaChevronRight } from 'react-icons/fa6'
 
 function Breadcrumb({ homeElement, homeUrl, isProtectedRoute }) {
   const paths = usePathname()
   const pathNames = paths.split('/').filter((path) => path)
+  const activePath = useSelectedLayoutSegment()
 
   //render 'Home' link condtionally if not currently on website home or dashboard route
   const renderHome = () => {
@@ -30,7 +31,7 @@ function Breadcrumb({ homeElement, homeUrl, isProtectedRoute }) {
   }
 
   return (
-    <nav className='pt-2 mb-4'>
+    <nav className='pt-2 mb-4 text-sm'>
       <ul className='flex flex-wrap items-center capitalize'>
         {renderHome()}
 
