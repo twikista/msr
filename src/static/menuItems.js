@@ -26,7 +26,7 @@ export const menuItems = [
       { pathName: 'Archive', url: '/archive' },
       { pathName: 'Editorial Process', url: '/editorial-process' },
       // { pathName: 'Submission Guide', url: 'submission-guide' },
-      { pathName: 'Publication Fee', url: '/publication-fee' },
+      { pathName: 'Processing Charges', url: '/processing-charges' },
     ],
   },
   {
