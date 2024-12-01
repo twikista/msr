@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { FaCreativeCommonsBy, FaCreativeCommons } from 'react-icons/fa'
 import { useSelectedLayoutSegment } from 'next/navigation'
-import { menuItems } from '../../static/menuItems'
+import { footerItems } from '../../static/menuItems'
 
 function Footer() {
   const routeSegment = useSelectedLayoutSegment()
@@ -14,7 +14,7 @@ function Footer() {
         <footer className='px-5 text-sm text-white bg-secondary sm:text-base md:px-10'>
           <div className='w-full py-8 mx-auto space-y-5 max-w-7xl'>
             <div className='grid justify-between grid-cols-2 gap-5 mx-auto md:grid-cols-4 font-barlow'>
-              {menuItems.map((menuItem) =>
+              {footerItems.map((menuItem) =>
                 menuItem.subMenuItems ? (
                   <ul key={menuItem.pathName} className='space-y-1'>
                     {menuItem.subMenuItems.map(({ pathName, url }) => (
@@ -22,9 +22,9 @@ function Footer() {
                         {pathName !== 'home' && (
                           <li
                             key={pathName}
-                            className=' hover:text-secondary w-fit'
+                            className=' hover:underline underline-offset-2 w-fit'
                           >
-                            <Link href={`/${url}`}>{pathName}</Link>
+                            <Link href={url}>{pathName}</Link>
                           </li>
                         )}
                       </>
