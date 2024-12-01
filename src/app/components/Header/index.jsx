@@ -20,24 +20,24 @@ const Header = () => {
     <>
       {activePath !== 'dashboard' && (
         <header>
-          <div className='relative flex flex-col items-center justify-center gap-1 py-1 pt-2 overflow-hidden bg-secondary md:bg-background xl:h-16 md:flex-row lg:gap-2 md:py-2 lg:py-3 text-background md:text-secondary'>
+          <div className='relative flex flex-col items-center justify-center gap-1 py-1 pt-2 overflow-hidden bg-secondary md:bg-background xl:h-[84px] md:flex-row lg:gap-2 md:py-2 lg:py-3 text-background md:text-secondary'>
             <div className='relative'>
-              <div className='hidden md:block bg-red-500 absolute w-[8px] h-[80px] top-[-20px] bottom-[-20px] left-[10px]' />
-              <div className=' hidden md:block bg-green-500 w-[8px] h-[80px] absolute top-[-20px] bottom-0  right-[10px]' />
-              <div className='md:h-[44px] md:w-[44px] h-[30px] w-[30px] flex bg-transparent  md:bg-white relative z-[2] items-center justify-center rounded-full'>
+              {/* <div className='hidden md:block bg-red-500 absolute w-[8px] h-[80px] top-[-20px] bottom-[-20px] left-[10px]' />
+              <div className=' hidden md:block bg-green-500 w-[8px] h-[80px] absolute top-[-20px] bottom-0  right-[10px]' /> */}
+              <div className='md:h-[60px] md:w-[60px] h-10 w-10 flex bg-transparent  md:bg-white relative z-[2] items-center justify-center rounded-full'>
                 <Image
                   src={unibenLogo}
                   alt='uniben logo'
-                  width={40}
+                  width={80}
                   height='auto'
                   className='hidden rounded-full md:block relative z-[2]'
                 />
                 <Image
                   src={unibenLogo}
                   alt='uniben logo'
-                  width={30}
+                  width={40}
                   height='auto'
-                  className='rounded-full md:hidden relative z-[2]'
+                  className='rounded-full md:hidden relative z-[2] w-10'
                 />
               </div>
             </div>

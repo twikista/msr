@@ -31,7 +31,7 @@ function Breadcrumb({ homeElement, homeUrl, isProtectedRoute }) {
   }
 
   return (
-    <nav className='pt-2 mb-4 text-sm'>
+    <nav className='pt-2 mb-4 text-sm md:text-base'>
       <ul className='flex flex-wrap items-center capitalize'>
         {renderHome()}
 

@@ -15,7 +15,7 @@ export const SubMenuItem = ({ title, href, className, toggleMenu }) => {
         className={cn('flex w-full bg-transparent', className)}
         onClick={toggleMenu}
       >
-        <h4 className='text-base font-bold'>{title}</h4>
+        <h4 className='text-base font-semibold text-gray-700'>{title}</h4>
       </Link>
     </li>
   )
@@ -66,7 +66,7 @@ export const MobileNav = ({
                 name='navbarClose'
                 aria-label='navbarClose'
               >
-                <MdOutlineClose className='text-2xl' />
+                <MdOutlineClose className='text-2xl text-gray-700' />
               </button>
             </div>
             <div className='flex flex-col flex-1 lg:hidden overflow-clip'>
@@ -76,19 +76,19 @@ export const MobileNav = ({
                     {menuItem.subMenuItems ? (
                       <li
                         key={menuItem.pathName}
-                        className='flex items-center justify-between py-5 text-lg font-bold border-b-2 cursor-pointer hover:text-primary-light border-stroke-light first:border-t-2 dark:border-body-text-dark/10 dark:border-stroke-dark'
+                        className='flex items-center justify-between py-3 text-base font-medium text-gray-700 capitalize border-b-2 cursor-pointer hover:text-primary-light border-stroke-light first:border-t-2 dark:border-body-text-dark/10 dark:border-stroke-dark'
                         onClick={() => {
                           setActive(menuItem)
                         }}
                       >
-                        <span>{menuItem.pathName}</span>
-                        <FaChevronRight />
+                        <span clas>{menuItem.pathName}</span>
+                        <FaChevronRight className='text-xs text-gray-600' />
                       </li>
                     ) : (
                       menuItem.url && (
                         <li
                           key={menuItem.pathName}
-                          className='flex items-center py-5 text-lg font-bold border-b-2 hover:text-primary-light border-stroke-light first:border-t-2 dark:border-body-text-dark/10 dark:border-stroke-dark'
+                          className='flex items-center py-3 text-base font-medium text-gray-700 capitalize border-b-2 hover:text-primary-light border-stroke-light first:border-t-2 dark:border-body-text-dark/10 dark:border-stroke-dark'
                           onClick={toggleMenu}
                         >
                           <Link href={menuItem.url} className='w-full'>
@@ -116,9 +116,9 @@ export const MobileNav = ({
                     {active ? (
                       <button
                         onClick={() => setActive(null)}
-                        className='flex items-center gap-[2px] text-base font-bold text-primary'
+                        className='flex items-center gap-[2px] text-base font-bold text-gray-700'
                       >
-                        <FaChevronLeft className='text-xs' />
+                        <FaChevronLeft className='text-xs text-gray-700' />
                         <span>Back</span>
                       </button>
                     ) : (
@@ -131,13 +131,13 @@ export const MobileNav = ({
                       name='navbarClose'
                       aria-label='navbarClose'
                     >
-                      <MdOutlineClose className='text-2xl' />
+                      <MdOutlineClose className='text-2xl text-gray-700' />
                     </button>
                   </div>
                   <div className='flex-1 px-4 mt-5'>
                     {active && (
                       <div className='flex items-center justify-center gap-1 py-2 mb-1 rounded-sm bg-secondary'>
-                        <h3 className='text-xl font-bold text-center capitalize text-background'>
+                        <h3 className='text-lg font-semibold text-center capitalize text-background'>
                           {active.pathName}
                         </h3>
                       </div>

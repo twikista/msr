@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { TiArrowSortedDown } from 'react-icons/ti'
+import { cn } from '../../../lib/utils'
 
 function SubMenu({ subMenuItems, showSubMenu, setShowSubMenu }) {
   const closeSubMenu = () => {
@@ -13,14 +14,14 @@ function SubMenu({ subMenuItems, showSubMenu, setShowSubMenu }) {
       {subMenuItems.map((menuItem) => (
         <li
           key={menuItem.pathName}
-          className={` py-2 px-3 min-w-[45px] hover:text-secondary hover:bg-gray-200 hobe [&:not(:last-child)]:border-b-[1px] border-secondary ${
+          className={` py-2 px-3 min-w-[45px] transition-all duration-200 hover:bg-gray-200/30 hobe [&:not(:last-child)]:border-b-[1px] border-secondary group/item cursor-pointer ${
             showSubMenu ? 'block' : 'hidden'
           }`}
           onClick={closeSubMenu}
         >
           <Link
             href={menuItem.url}
-            className='capitalize hover:translate-x-1.5 transition-all ease-linear duration-400 inline-block'
+            className='capitalize w-full group-hover/item:translate-x-1.5 transition-all ease-linear duration-200 inline-block'
           >
             {menuItem.pathName}
           </Link>
@@ -32,14 +33,20 @@ function SubMenu({ subMenuItems, showSubMenu, setShowSubMenu }) {
 
 function MenuItem({ menuItem }) {
   const [showSubMenu, setShowSubMenu] = useState(false)
-  const currentRoute = usePathname()
+  const pathname = usePathname()
   const handler = () => {
     setShowSubMenu(!showSubMenu)
   }
+
+  const activeSubMenu = (menuItem) =>
+    menuItem.subMenuItems.some((i) => i.url === pathname)
+
+  const active = (path, href) => path === href
+
   return (
     <li
       key={menuItem.pathName}
-      className={`flex items-center `}
+      className={cn('')}
       onMouseEnter={() => setShowSubMenu(true)}
       onMouseLeave={() => setShowSubMenu(false)}
     >
@@ -47,7 +54,10 @@ function MenuItem({ menuItem }) {
         <>
           <button
             type='button'
-            className='flex items-center gap-1 capitalize w-fit'
+            className={cn(
+              'flex items-center justify-center gap-1 capitalize w-fit px-3 rounded-md py-1 transition-all duration-300',
+              activeSubMenu(menuItem) && 'bg-[#f8fbf8]/30 shadow-sm'
+            )}
             aria-haspopup='menu'
             aria-expanded={showSubMenu ? 'true' : 'false'}
             onClick={handler}
@@ -65,7 +75,13 @@ function MenuItem({ menuItem }) {
           }
         </>
       ) : (
-        <Link href={`${menuItem.url}`} className='text-base capitalize'>
+        <Link
+          href={`${menuItem.url}`}
+          className={cn(
+            'text-base flex items-center justify-center capitalize w-fit px-3 rounded-md py-1 transition-all duration-300',
+            active(pathname, menuItem.url) && 'bg-[#f8fbf8]/30 shadow-sm'
+          )}
+        >
           {menuItem.pathName}
         </Link>
       )}
