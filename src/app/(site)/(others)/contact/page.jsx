@@ -1,5 +1,10 @@
 import React from 'react'
+import Main from '../../../components/shared/Main'
 
 export default function Contact() {
-  return <div>contact</div>
+  return (
+    <Main>
+      <div>sjsjsjssj</div>
+    </Main>
+  )
 }

@@ -15,15 +15,16 @@ const TextBlock = ({ heading, text, href = '#' }) => (
 export default function Home() {
   return (
     <Main>
-      <p className=''>
-        The Management Sciences Review (MSR) is a publication of the Faculty of
-        Management Sciences, University of Benin, Benin city, Nigeria. The
-        Journal is dedicated to promoting and advancing research and practice
-        across all disciplines in the management sciences including Accounting,
-        Acturial Science, Audit, Business Administration, Entrepreneurship,
-        Finance, Forensic Accounting, Human Resource Management, Insurance,
-        Magement and Information Systems, Marketing, Taxation, and related
-        fields in Humanities and Social Sciences.
+      <p className='mt-4 text-justify'>
+        Welcome to the offical website of the Management Sciences Review (MSR),
+        a publication of the Faculty of Management Sciences, University of
+        Benin, Benin city, Nigeria. The Journal is dedicated to promoting and
+        advancing research and practice across all disciplines in the management
+        sciences including Accounting, Acturial Science, Audit, Business
+        Administration, Entrepreneurship, Finance, Forensic Accounting, Human
+        Resource Management, Insurance, Magement and Information Systems,
+        Marketing, Taxation, and relatedfields in Humanities and Social
+        Sciences.
       </p>
       <p>
         The MSR aims to proivde a platform for researchers, academicians,

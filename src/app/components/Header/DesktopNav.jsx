@@ -46,7 +46,7 @@ function MenuItem({ menuItem }) {
   return (
     <li
       key={menuItem.pathName}
-      className={cn('')}
+      className={cn('group/item')}
       onMouseEnter={() => setShowSubMenu(true)}
       onMouseLeave={() => setShowSubMenu(false)}
     >
@@ -55,7 +55,7 @@ function MenuItem({ menuItem }) {
           <button
             type='button'
             className={cn(
-              'flex items-center justify-center gap-1 capitalize w-fit px-3 rounded-md py-1 transition-all duration-300',
+              'flex items-center justify-center gap-1 capitalize w-fit px-3 rounded-md py-1 transition-all duration-300 group-hover/item:text-yellow-400',
               activeSubMenu(menuItem) && 'bg-[#f8fbf8]/30 shadow-sm'
             )}
             aria-haspopup='menu'
@@ -78,7 +78,7 @@ function MenuItem({ menuItem }) {
         <Link
           href={`${menuItem.url}`}
           className={cn(
-            'text-base flex items-center justify-center capitalize w-fit px-3 rounded-md py-1 transition-all duration-300',
+            'text-base flex items-center justify-center capitalize w-fit px-3 rounded-md py-1 transition-all group-hover/item:text-yellow-400 duration-300',
             active(pathname, menuItem.url) && 'bg-[#f8fbf8]/30 shadow-sm'
           )}
         >
