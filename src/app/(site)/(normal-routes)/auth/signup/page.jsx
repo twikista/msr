@@ -1,9 +1,9 @@
-'use client'
-import React, { useState } from 'react'
-import { login, signup, logOut } from '../../../../../lib/actions/auth'
+'use client';
+import React, { useState } from 'react';
+import { login, signup, logOut } from '../../../../../lib/actions/auth';
 
 export default function Page() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const formData = {
     firstName: 'Darlington',
     lastName: 'Ogbeide',
@@ -12,14 +12,14 @@ export default function Page() {
     password: '123456',
     role: 'admin',
     isActivated: 'true',
-  }
+  };
 
   const onSubmit = async () => {
-    setIsSubmitting(true)
-    const response = await signup(formData)
-    setIsSubmitting(false)
-    console.log(response)
-  }
+    setIsSubmitting(true);
+    const response = await signup(formData);
+    setIsSubmitting(false);
+    console.log(response);
+  };
 
   // const onSignIn = async () => {
   //   setIsSubmitting(true)
@@ -32,7 +32,7 @@ export default function Page() {
   // }
 
   const onLogOut = async () => {
-    logOut()
+    logOut();
     // setIsSubmitting(true)
     // const response = login({
     //   email: 'aaronanama@gmail.com',
@@ -40,7 +40,7 @@ export default function Page() {
     // })
     // setIsSubmitting(false)
     // console.log(response)
-  }
+  };
   return (
     <div>
       <p>{isSubmitting ? 'loading...' : null}</p>
@@ -54,5 +54,5 @@ export default function Page() {
         log out
       </button>
     </div>
-  )
+  );
 }

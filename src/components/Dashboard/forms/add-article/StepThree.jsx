@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import TextArea from '../TextArea'
 import FileInput from '../FileInput'
 
-export default function StepThree() {
+export default function StepThree({ hasInitialValue }) {
   return (
     <div className='space-y-4'>
       <TextArea
@@ -11,7 +11,7 @@ export default function StepThree() {
         name='abstract'
         placeholder='Enter article abstract'
       />
-      <FileInput />
+      <FileInput hasInitialValue={hasInitialValue} />
     </div>
   )
 }

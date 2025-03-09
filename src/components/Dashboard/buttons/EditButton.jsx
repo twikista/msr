@@ -18,7 +18,7 @@ export default function EditButton({
         // href={href}
         href={href}
         className={cn(
-          'rounded-[8px] text-gray-50 flex bg-[#008dcb] hover:bg-blue-600 min-w-[220px] font-medium items-center justify-center gap-2 px-4 capitalize py-2 shadow-md',
+          'btn text-gray-50 bg-[#008dcb] hover:bg-blue-600 font-medium items-center justify-center gap-2 px-4 capitalize py-2 shadow-md',
           disabled && 'pointer-events-none text-gray-500 bg-gray-200'
         )}
       >

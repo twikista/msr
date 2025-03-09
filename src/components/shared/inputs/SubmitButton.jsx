@@ -1,5 +1,5 @@
-import Spinner from '../Spinner'
-import { cn } from '../../../lib/utils'
+import Spinner from '../Spinner';
+import { cn } from '../../../lib/utils';
 
 function SubmitButton({
   mainText,
@@ -11,7 +11,7 @@ function SubmitButton({
   return (
     <button
       type='submit'
-      // disabled={disabled}
+      disabled={isSubmitting}
       className={cn('btn bg-secondary', className)}
     >
       {isSubmitting ? (
@@ -20,7 +20,7 @@ function SubmitButton({
         <span className=''>{mainText}</span>
       )}
     </button>
-  )
+  );
 }
 
-export default SubmitButton
+export default SubmitButton;

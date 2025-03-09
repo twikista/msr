@@ -126,12 +126,7 @@ export const articleFormSchema = z.object({
   keywords: z.array(z.string()).refine((keywords) => keywords.length, {
     message: 'Keyword must be provided',
   }),
-  jelClassification: z
-    .array(z.string())
-    .refine((keywords) => keywords.length, {
-      message: 'Keyword must be provided',
-    })
-    .optional(),
+  jelClassification: z.array(z.string()).optional(),
 })
 
 export const newArticleFormSchema = articleFormSchema.extend({

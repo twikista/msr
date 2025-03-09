@@ -1,5 +1,5 @@
-import DashBoardLeft from './DashBoardLeft'
-import DashBoardRight from './DashBoardRight'
+import DashBoardLeft from './DashBoardLeft';
+import DashBoardRight from './DashBoardRight';
 
 export default function LayoutWrapper({ children }) {
   return (
@@ -7,5 +7,5 @@ export default function LayoutWrapper({ children }) {
       <DashBoardLeft />
       <DashBoardRight>{children}</DashBoardRight>
     </main>
-  )
+  );
 }

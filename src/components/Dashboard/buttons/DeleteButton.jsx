@@ -13,6 +13,7 @@ export default function DeleteButton({
   variant = 'primary',
   label = 'Delete',
   altLabel,
+  className,
 }) {
   const [isLoading, setIsLoading] = useState(false)
   const handler = async (id) => {
@@ -34,8 +35,9 @@ export default function DeleteButton({
         disabled={isLoading}
         onClick={() => handler(id)}
         className={cn(
-          'w-full shadow-md flex gap-1 btn btn-danger',
-          isLoading && 'pointer-events-none text-gray-500 bg-gray-200'
+          'shadow-md flex gap-1 btn btn-danger',
+          isLoading && 'pointer-events-none text-gray-500 bg-gray-200',
+          className
         )}
       >
         {variant === 'primary' && (

@@ -1,11 +1,12 @@
-'use client'
-import { usePathname, useSelectedLayoutSegments } from 'next/navigation'
-import Link from 'next/link'
-import { cn } from '../../../lib/utils'
+'use client';
+import { usePathname, useSelectedLayoutSegments } from 'next/navigation';
+import Link from 'next/link';
+import { cn } from '../../../lib/utils';
 
 function SideNavItem({ link, linkText, OutlineIcon, FillIcon }) {
-  const pathname = usePathname()
-  const active = (href) => pathname === href
+  const pathname = usePathname();
+  const active = (href) =>
+    pathname === href || pathname.includes(href.split('/')[2]);
 
   return (
     <li
@@ -32,7 +33,7 @@ function SideNavItem({ link, linkText, OutlineIcon, FillIcon }) {
         <span>{linkText}</span>
       </Link>
     </li>
-  )
+  );
 }
 
-export default SideNavItem
+export default SideNavItem;

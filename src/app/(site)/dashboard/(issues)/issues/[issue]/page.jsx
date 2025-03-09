@@ -1,12 +1,12 @@
-import { auth } from '../../../../../../../auth'
-import IssueEmptyState from '../../../../../../components/Dashboard/issues/IssueEmptyState'
-import IssueContent from '../../../../../../components/Dashboard/issues/Issue'
-import { connectDB } from '../../../../../../lib/mongoose/config'
-import { Issue, Article } from '../../../../../../lib/mongoose/models'
+import { auth } from '../../../../../../../auth';
+import IssueEmptyState from '../../../../../../components/Dashboard/issues/IssueEmptyState';
+import IssueContent from '../../../../../../components/Dashboard/issues/Issue';
+import { connectDB } from '../../../../../../lib/mongoose/config';
+import { Issue, Article } from '../../../../../../lib/mongoose/models';
 // import { getArticlesInIssue } from '../../../../../../lib/data'
 
 const getArticlesInIssue = async (issueRef) => {
-  connectDB()
+  connectDB();
   const articlesInIssue = await Promise.all([
     Issue.find({
       ref: 'volume-1-issue-1',
@@ -16,25 +16,25 @@ const getArticlesInIssue = async (issueRef) => {
     }).sort({
       startPage: 1,
     }),
-  ])
-  return articlesInIssue
-}
+  ]);
+  return articlesInIssue;
+};
 
 async function IssuePage({ params }) {
-  const { user } = await auth()
+  const { user } = await auth();
 
-  const { issue: issueRef } = params
+  const { issue: issueRef } = params;
 
-  const [[issue], articlesInIssue] = await getArticlesInIssue(issueRef)
+  const [[issue], articlesInIssue] = await getArticlesInIssue(issueRef);
 
-  const adminPrivilege = issue?.status === 'draft' && user?.role === 'admin'
-  console.log(articlesInIssue.length)
+  const adminPrivilege = issue?.status === 'draft' && user?.role === 'admin';
+  console.log(articlesInIssue.length);
 
-  const systemAdminPrevilege = user?.role === 'system-admin'
+  const systemAdminPrevilege = user?.role === 'system-admin';
   const adminRoles = {
     admin: adminPrivilege,
     systemAdmin: systemAdminPrevilege,
-  }
+  };
 
   return (
     <>
@@ -48,7 +48,7 @@ async function IssuePage({ params }) {
         />
       )}
     </>
-  )
+  );
 
   // return (
   //   <main className='relative flex h-screen'>
@@ -220,4 +220,4 @@ async function IssuePage({ params }) {
   // )
 }
 
-export default IssuePage
+export default IssuePage;
