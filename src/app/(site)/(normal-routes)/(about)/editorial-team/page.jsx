@@ -1,7 +1,7 @@
-import { H1, H2, H3 } from '../../../../../components/shared/headings'
-import Main from '../../../../../components/shared/Main'
-import { TextBlock } from '../../../../../components/shared/TextBlock'
-import React from 'react'
+import { H1, H2, H3 } from '../../../../../components/shared/headings';
+import Main from '../../../../../components/shared/Main';
+import { TextBlock } from '../../../../../components/shared/TextBlock';
+import React from 'react';
 
 const editors = [
   {
@@ -13,14 +13,16 @@ const editors = [
       'Prof. Peter Okoeguale Ibadin',
       'prof. James odia',
       'Prof. Killian Ogiedu',
-      'Dr. Osasu Obaretin',
+      'Prof. Osasu Obaretin',
     ],
   },
   {
     department: 'Finance',
     editors: [
-      'Prof. Sunday Osaretin Igbinosa',
-      'Dr. M.G. Ajao',
+      'Prof. (Mrs) G.A. Nwokoye',
+      'Prof. (Mrs) E.I. Evbayiro-Osagie',
+      'Prof. M.G. Ajao',
+      'Prof. E.J. Idolor',
       'Dr. O.G. Omorunkuwa',
     ],
   },
@@ -58,16 +60,16 @@ const editors = [
       'Dr. Mrs. O.R. Dania',
     ],
   },
-]
+];
 
 const editorialAdvisoryBoard = [
   'Prof. Esosa Boniface Bob-Osaze',
   'Prof. Famous Izedonmi',
-  'Prof. Ifuero Osad Osamwonyi',
+  'Prof. Sunday Osaretin Igbinosa',
   'Prof. Chinwuba Ambrose Okafor',
   'Prof. Adesina Oladipupo',
   'Prof. ofuan James Ilaboya',
-]
+];
 
 function EditorialTeam() {
   return (
@@ -82,7 +84,7 @@ function EditorialTeam() {
       <TextBlock
         headingType='small'
         headingText='Business Manager'
-        text='Dr. Darlington Osaremwinda Ogbeide '
+        text='Dr. Osagie Osifo'
         className='gap-0 p-0'
       />
       <>
@@ -112,7 +114,7 @@ function EditorialTeam() {
         </div>
       </div>
     </Main>
-  )
+  );
 }
 
-export default EditorialTeam
+export default EditorialTeam;

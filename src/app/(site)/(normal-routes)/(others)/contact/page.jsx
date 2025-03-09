@@ -1,6 +1,6 @@
-import React from 'react'
-import Main from '../../../../../components/shared/Main'
-import { H1, H3 } from '../../../../../components/shared/headings'
+import React from 'react';
+import Main from '../../../../../components/shared/Main';
+import { H1, H3 } from '../../../../../components/shared/headings';
 
 export default function Contact() {
   return (
@@ -17,12 +17,12 @@ export default function Contact() {
         </div>
         <div>
           <H3>Support Contact</H3>
-          <span className='block'>Dr. D. O. Ogbeide</span>
+          <span className='block'>Dr. Osagie Osifo</span>
           <span className='block'>Business manager, MSR</span>
-          <span className='block'>Email: darlington.ogbeide@uniben.edu</span>
-          <span className='block'>Phone: 0802 711 1613, 0703 587 7175</span>
+          <span className='block'>Email: osagie.osifo@uniben.edu</span>
+          <span className='block'>Phone: 0703 882 3825</span>
         </div>
       </div>
     </Main>
-  )
+  );
 }
