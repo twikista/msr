@@ -1,8 +1,8 @@
-import React from 'react'
-import Main from '../../../../../components/shared/Main'
-import { H1, H2, H3 } from '../../../../../components/shared/headings'
-import { TextBlock } from '../../../../../components/shared/TextBlock'
-import LayoutWrapper from '../../../../../components/shared/LayoutWrapper'
+import React from 'react';
+import Main from '../../../../../components/shared/Main';
+import { H1, H2, H3 } from '../../../../../components/shared/headings';
+import { TextBlock } from '../../../../../components/shared/TextBlock';
+import LayoutWrapper from '../../../../../components/shared/LayoutWrapper';
 
 export default function PublicationFee() {
   return (
@@ -13,7 +13,7 @@ export default function PublicationFee() {
           className='px-0'
           headingText='Local Authors'
           headingType='small'
-          text='Manuscripts must be accompanied with a non-refundable assessment fee of ₦7,000. Upon acceptance, a publication fee of ₦ 25,000 is expected.'
+          text='Manuscripts must be accompanied with a non-refundable assessment fee of ₦10,000. Upon acceptance, a publication fee of ₦ 30,000 is expected.'
         />
         <TextBlock
           className='px-0'
@@ -39,5 +39,5 @@ export default function PublicationFee() {
         </span>
       </div>
     </Main>
-  )
+  );
 }
